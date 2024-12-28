@@ -1,70 +1,44 @@
-# Phonebook Microservices
+# Kubernetes-microservice-aws-phonebook
 
-## Project Overview
+A cloud-native phonebook application showcasing microservices architecture and container orchestration on AWS.
 
-This project demonstrates:
+## Project Highlights
 
-- Real-world microservice architecture implementation
-- Production-ready containerization practices
-- Enterprise-grade data persistence and security
-- Cloud infrastructure automation
-- Modern DevOps workflows
+✨ Advanced cloud architecture using Kubernetes and Docker  
+✨ Scalable microservices with automated deployment  
+✨ Production-grade security and data persistence  
+✨ Infrastructure as Code implementation
 
-## What The Application Does
+## Key Features
 
-The Phonebook application provides a practical example of splitting a traditional monolithic application into microservices. It features:
+• High Availability
+  - Automated scaling
+  - Load balancing
+  - Persistent data storage
 
-- A frontend service for searching contacts
-- A backend service for managing contacts (create, update, delete)
-- A dedicated database service for data persistence
-- RESTful API architecture
-- Secure data handling and storage
+• Security
+  - Kubernetes secrets management
+  - Secure service communication
+  - Protected database access
 
-## Technical Highlights
-
-### Architecture & Infrastructure
-- Kubernetes-orchestrated microservices
-- MySQL database with persistent storage
-- Load-balanced services with automatic scaling
-- ConfigMaps and Secrets for secure configuration management
-- AWS cloud infrastructure managed through CloudFormation
-
-### Security & Best Practices
-- Containerized services with Docker
-- Secure secret management
-- Network isolation between services
-- Infrastructure as Code (IaC) implementation
-- GitOps-ready deployment configuration
-
-### Technologies Used
-- **Container Orchestration**: Kubernetes
-- **Containerization**: Docker
-- **Backend**: Python Flask
-- **Database**: MySQL 5.7
-- **Cloud Platform**: AWS
-- **Infrastructure as Code**: CloudFormation
-- **Version Control**: Git/GitHub
+• Modern Architecture
+  - Microservices design
+  - Container orchestration
+  - Cloud-native deployment
 
 
+## Quick Start
 
-## Technical Architecture
+1. **Setup Infrastructure**
+   ```bash
+   aws cloudformation deploy --template-file k8s-cluster.yaml
+   ```
 
-The application is structured into three main components:
+2. **Deploy Application**
+   ```bash
+   kubectl apply -f k8s/
+   ```
 
-1. **Frontend Service (Search)**
-   - Handles contact search operations
-   - Exposed on port 30002
-   - Horizontally scalable
-
-2. **Backend Service (Create/Update/Delete)**
-   - Manages contact modifications
-   - Exposed on port 30001
-   - Independently scalable from search service
-
-3. **Database Service**
-   - Persistent MySQL database
-   - Protected within cluster
-   - Automated backup and recovery capabilities
-
-
-By implementing this project, developers demonstrate their ability to build and manage modern, cloud-native applications using industry-standard tools and practices.
+3. **Access Application**
+   - Main Interface: `http://[hostname]:30001`
+   - Search Interface: `http://[hostname]:30002`
